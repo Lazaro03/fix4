@@ -1,4 +1,3 @@
-import youtube_dl
 
 def get_youtube_info(url):
     yt_opt = {
@@ -8,7 +7,7 @@ def get_youtube_info(url):
         'dumpsinglejson':True,
         'format':'best[protocol=https]/best[protocol=http]/bestvideo[protocol=https]/bestvideo[protocol=http]'
               }
-    ydl = youtube_dl.YoutubeDL(yt_opt)
+    ydl = YoutubeDL(yt_opt)
     with ydl:
         result = ydl.extract_info(
             url,
